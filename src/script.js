@@ -96,7 +96,7 @@ writtenName.innerHTML=` ${inputCity.value}`;
 
   
 
- let urlLAT="http://api.openweathermap.org/geo/1.0/direct";
+ let urlLAT="https://api.openweathermap.org/geo/1.0/direct";
 axios.get(`${urlLAT}?q=${inputCity.value}&limit=5&appid=${apiKey}`).then(longLAT);
 
 }
@@ -300,7 +300,7 @@ let weatherUrl =
   "https://api.openweathermap.org/data/2.5/weather";
   axios.get(`${weatherUrl}?lat=${latITUDE}&lon=${lonGITUDE}&appid=${apiKey}&units=metric`).then(showUser);
 
-  let reverseUrl="http://api.openweathermap.org/geo/1.0/reverse";
+  let reverseUrl="https://api.openweathermap.org/geo/1.0/reverse";
   axios.get(`${reverseUrl}?lat=${latITUDE}&lon=${lonGITUDE}&limit=5&appid=${apiKey}`).then(showCity);    
   
 }}

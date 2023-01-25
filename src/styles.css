@@ -1,0 +1,92 @@
+
+
+
+
+h1{
+text-align:left;
+
+} 
+h2{text-align:right;
+    
+}
+h3{
+    text-align:right;
+}
+
+.body {
+    background-color: rgb(88, 20, 116);
+    font-family: 'Raleway', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.currentLocation{
+    color: white;
+    background-color:blueviolet;
+    border-radius:20px;
+}
+
+.weather_temperature{
+text-align: right;
+font-weight:bold;
+}
+
+.max{
+    
+    margin-left:0;
+}
+
+.search_left{
+    max-width:50%;
+    margin-left:2%;
+}
+
+.right_side{
+    max-width:50%;
+    margin-right:2%;
+}
+
+
+
+.app_background{
+    border: 2px solid #000;
+    border-radius:20px;
+    margin:20px 20px 20px 20px;
+    padding: 40px 40px 40px 40px;
+    background-color: white;
+    color:rgba(50, 50, 130, 1);
+}
+.weather_week{
+    
+    font-weight:bold;
+   
+}
+
+.lft{
+margin-left: 40px;
+}
+
+.rght{
+    margin-right:10px;
+
+}
+
+
+.weathergrid{
+display:grid;
+grid-template-columns: 1fr 1fr  1fr 1fr 1fr;
+column-gap:10px;
+}
+
+.griditem{
+display:block;
+margin: 0 auto;
+}
+
+
+
+img{
+max-width:100%;   
+margin-bottom:40px; 
+border: 2px solid #000;
+border-radius:20px;
+}

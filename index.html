@@ -19,17 +19,17 @@
     <div class="container app_background">
         <div class="row" >
 <div class="col search_left">
-    <h1>Explore the current weather
+    <h1 class="task">Explore the current weather
 
     </h1>
-<nav class="navbar max">
-    <div class="">
+<nav class="searchBar">
+    <div class="" >
         <h5></h5>
         <form class="d-flex" role="search"  id="form1" method="post" value="">
             
             <label><input class="form-control me-2" type="text" id="label1" placeholder="Please search for a city" value=""></label>l
             <br>
-            <button class="btn btn-outline-success" type="submit" id="searchInput" >
+            <button class="buttonSearch" type="submit" id="searchInput" >
                 Search
             </button>
             
@@ -38,60 +38,63 @@
     </div>
 
 </nav>
+
 <button class="currentLocation" type="submit" id="searchCurrentLocation">
     Current Location
 </button>
 
+
 </div>
-<div class="col right_side" ><h2> <span id="cityDisplay">city </span><span id="countryDisplay">, country</span></h2>
-<h3><span id="dayDis"></span><span id="hourDis"></span></h3>
+<img src="images/cat-1144198_1280.png" title="curious like a cat" id="cat">
+<div class="weatherDisplay" ><h2> <span id="cityDisplay">city </span><span id="countryDisplay">country</span></h2>
+<h3 class="weather_temperature today"><span id="dayDis"></span><span id="hourDis"></span></h3>
 
 <p class="weather_temperature"> </p>
 <p class="weather_temperature" id="degrees">Current Temperature</p>
-<p class="weather_temperature"> <i>feels like:</i> <span id="feelsLike"></span><span id="weatherdesc"></span></p>
+<p class="weather_temperature results"> <i>feels like:</i> <span id="feelsLike"></span><span id="weatherdesc"></span></p>
 </div>
 </div>
 
 <div  class="weathergrid">
 
     <div class="griditem">
-        <p id="day1">Sun</p>
-        <p id="desc1">🌤️</p>
+        <p class="day" id="day1">Sun</p>
+        <p class="desc" id="desc1">🌤️</p>
         <p id="symbol1"></p> 
-        <p id="temp1">8°C</p>
+        <p class="temp" id="temp1">8°C</p>
     </div>
     <div class="griditem"  >
-        <p id="day2">Mon</p>
-        <p id="desc2">🌧️</p>
+        <p class="day" id="day2">Mon</p>
+        <p class="desc" id="desc2">🌧️</p>
         <p id="symbol2"></p>
-        <p id="temp2">11°C</p>
+        <p class="temp" id="temp2">11°C</p>
     </div>
     <div class="griditem">
-        <p id="day3">Tue</p>
-        <p id="desc3">🌦️</p>
-        <p id="symbol3"></p>
-        <p id="temp3">10°C</p>
+        <p class="day" id="day3">Tue</p>
+        <p class="desc" id="desc3">🌦️</p>
+        <p  id="symbol3"></p>
+        <p class="temp" id="temp3">10°C</p>
     </div>
     <div class="griditem">
-        <p id="day4">Wed</p>
-        <p id="desc4">🌤️</p>
+        <p class="day" id="day4">Wed</p>
+        <p class="desc" id="desc4">🌤️</p>
         <p id="symbol4"></p>
-        <p id="temp4">11°C</p>
+        <p class="temp" id="temp4">11°C</p>
     </div>
     <div class="griditem">
-        <p id="day5">Thu</p>
-        <p id="desc5">🌥️</p>
+        <p class="day" id="day5">Thu</p>
+        <p class="desc" id="desc5">🌥️</p>
         <p id="symbol5"></p>
-        <p id="temp5">9°C</p>
+        <p class="temp" id="temp5">9°C</p>
     </div>
 
 
 </div>
 
     </div>
-    <p id="gitRef"> <a href="https://github.com/ed-kohl/myfirstweatherapp" title="Project on Github">Open Source project</a>
+    <div class="gitRef"> <a href="https://github.com/ed-kohl/myfirstweatherapp" title="Project on Github">Open Source project</a>
         coded by
-        Edeltraud Kohl </p>
+        Edeltraud Kohl </div>
     <script src="src/script.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     </body>

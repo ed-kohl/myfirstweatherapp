@@ -6,6 +6,14 @@ h1{
 text-align:left;
 
 } 
+
+.task{
+color: rgba(0, 98, 105, 1);
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow:2px 2px rgba(50, 50, 130, 1);
+    
+}
 h2{text-align:right;
     
 }
@@ -14,21 +22,102 @@ h3{
 }
 
 .body {
-    background-color: rgb(88, 20, 116);
+    background-color: white;
     font-family: 'Raleway', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+#cat{
+    max-height:100px;
+    width:auto;
+border-color:white;
+    margin-right: 1%;
+}
+
+.searchBar{
+border:0.5px black;
+
+margin-top:20px;
+}
+
+#form1{
+    max-width:100%;
+}
+.buttonSearch{
+    background-color:rgba(0,98,105,1);
+    font-size:18px;
+    color:white;
+    border: 1px dashed black;
+    border-radius:15px;
+    box-shadow:0, white;
+    margin-left:10px;
+    padding:8px 8px 8px 8px;
+}
+
+.buttonSearch:hover{
+    background-color:white;
+    color:rgba(0,98,105, 1);
+    box-shadow: 7px 7px rgba(0, 98, 105, 1);
+}
+
+.weatherDisplay{
+color: black;
+background-color: white;
+
+
+display:block;
+border: 2px dotted rgba(50, 50, 130, 0.5);
+padding: 40px 40px 40px 40px;
+margin:20px 0 20px 0 ;
+border-radius:20px;
+}
+
+
+
+#cityDisplay{
+    display:flex;
+    margin-left:0;
+    padding:0;
+    font-size: 64px;
+    line-height:64 px;
+    
+}
+
+#countryDisplay{
+    display:flex;
+    margin-left:0;
+    padding:0;
 
 }
 
 .currentLocation{
     color: white;
-    background-color:blueviolet;
+    background-color:lightslategray;
     border-radius:20px;
+    margin:2%;
+    padding: 5px 5px 5px 5px;
 }
 
 .weather_temperature{
-text-align: right;
+text-align: left;
 font-weight:bold;
+
 }
+
+.today{
+    box-shadow:grey 5px 5px;
+    border-radius:4px;
+    padding: 2px;
+    max-width:180px;
+    background-color:lightgrey;
+}
+
+.results{
+    font-size:12px;
+    font-style:italic;
+    color:grey;
+}
+
 
 .max{
     
@@ -52,8 +141,8 @@ font-weight:bold;
     border-radius:20px;
     margin:20px 20px 20px 20px;
     padding: 40px 40px 40px 40px;
-    background-color: white;
-    color:rgba(50, 50, 130, 1);
+    background-color: rgba(0,98,105, 0.2);
+    color: rgba(50, 50, 130, 1);
 }
 .weather_week{
     
@@ -80,11 +169,36 @@ column-gap:10px;
 .griditem{
 display:block;
 margin: 0 auto;
+
+}
+.day{
+    font-weight:bold;
+    font-size:20px;
+
+}
+.desc{
+    font-size:16px;
+    font-style:italic;
 }
 
-#gitRef{
-  display:flex;
-  margin-left: 17%;
+.temp{
+    font-size:20px;
+}
+
+#degrees{
+    font-size:30px;
+}
+.gitRef{
+  display:box;
+  max-width:1100px;
+  margin-left:38%;
+  margin-right: 38%;
+  font-style:italic;
+  color: darkblue;
+}
+
+.gitRef a{
+    color:darkblue;
 }
 
 img{

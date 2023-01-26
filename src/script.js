@@ -122,7 +122,7 @@ function showTemperature(tempInLoc){
 let writtenbyUser=document.querySelector(`#cityDisplay`);
 writtenbyUser.innerHTML=`${tempInLoc.data.name}`;
 let countryOfCity=document.querySelector(`#countryDisplay`);
-countryOfCity.innerHTML=`, ${tempInLoc.data.sys.country}`;
+countryOfCity.innerHTML=` ${tempInLoc.data.sys.country}`;
 
 
   let currentTemp = document.querySelector(`#degrees`);

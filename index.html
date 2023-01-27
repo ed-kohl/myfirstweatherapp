@@ -27,31 +27,34 @@
         <h5></h5>
         <form class="d-flex" role="search"  id="form1" method="post" value="">
             
-            <label><input class="form-control me-2" type="text" id="label1" placeholder="Please search for a city" value=""></label>l
-            <br>
+            <label><input class="form-control me2" type="text" id="label1" placeholder="Please search for a city" value=""></label>l
+            
             <button class="buttonSearch" type="submit" id="searchInput" >
                 Search
             </button>
             
-            
+           
         </form>
+        <button class="currentLocation" type="submit" id="searchCurrentLocation">
+            Current Location
+        </button>
     </div>
 
 </nav>
 
-<button class="currentLocation" type="submit" id="searchCurrentLocation">
-    Current Location
-</button>
+
 
 
 </div>
 <img src="images/cat-1144198_1280.png" title="curious like a cat" id="cat">
-<div class="weatherDisplay" ><h2> <span id="cityDisplay">city </span><span id="countryDisplay">country</span></h2>
+<div class="weatherDisplay" ><h2> <span id="cityDisplay"></span><span id="countryDisplay"></span></h2>
 <h3 class="weather_temperature today"><span id="dayDis"></span><span id="hourDis"></span></h3>
 
 <p class="weather_temperature"> </p>
-<p class="weather_temperature" id="degrees">Current Temperature</p>
-<p class="weather_temperature results"> <i>feels like:</i> <span id="feelsLike"></span><span id="weatherdesc"></span></p>
+<p><span class="weather_temperature" id="degrees"></span><span></span><span></span></p>
+<p class="weather_temperature results"> <i></i> <span id="feelsLike"></span><span id="weatherdesc"></span></p>
+<p><span class="weather_temperature results" id="windSpeed"></span>
+    <span class="weather_temperature results" id="inkmH"></span></p>
 </div>
 </div>
 
@@ -59,33 +62,68 @@
 
     <div class="griditem">
         <p class="day" id="day1">Sun</p>
-        <p class="desc" id="desc1">🌤️</p>
+        <p class="desc" id="desc1"></p>
         <p id="symbol1"></p> 
-        <p class="temp" id="temp1">8°C</p>
+        <p class="temp" id="temp1"></p>
+        <hr>
+        <p><span class="tempMinn" id="tempMin1"></span>
+            <span class="tempMaxn" id="tempMax1"></span> <br>
+        
+    </p>
+        <p class="humidityN" id="humidN1"></p>
+        <p class="windSpeedn" id="windS1"></p>
     </div>
     <div class="griditem"  >
         <p class="day" id="day2">Mon</p>
-        <p class="desc" id="desc2">🌧️</p>
+        <p class="desc" id="desc2"></p>
         <p id="symbol2"></p>
-        <p class="temp" id="temp2">11°C</p>
+        <p class="temp" id="temp2"></p>
+        <hr>
+        <p> <span class="tempMinn" id="tempMin2"></span>
+            <span class="tempMaxn" id="tempMax2"></span>
+            
+        </p>
+        <p class="humidityN" id="humidN2"></p>
+        <p class="windSpeedn" id="windS2"></p>
+
     </div>
     <div class="griditem">
         <p class="day" id="day3">Tue</p>
-        <p class="desc" id="desc3">🌦️</p>
+        <p class="desc" id="desc3"></p>
         <p  id="symbol3"></p>
-        <p class="temp" id="temp3">10°C</p>
+        <p class="temp" id="temp3"></p>
+        <hr>
+        <p> 
+            <span class="tempMinn" id="tempMin3"></span>
+            <span class="tempMaxn" id="tempMax3"></span>
+          
+        </p>
+        <p class="humidityN" id="humidN3"></p>
+        <p class="windSpeedn" id="windS3"></p>
     </div>
     <div class="griditem">
         <p class="day" id="day4">Wed</p>
-        <p class="desc" id="desc4">🌤️</p>
+        <p class="desc" id="desc4"></p>
         <p id="symbol4"></p>
-        <p class="temp" id="temp4">11°C</p>
+        <p class="temp" id="temp4"></p>
+        <hr>
+        <p> <span class="tempMinn" id="tempMin4"></span>
+            <span class="tempMaxn" id="tempMax4"></span>
+        </p>
+        <p class="humidityN" id="humidN4"></p>
+        <p class="windSpeedn" id="windS4"></p>
     </div>
     <div class="griditem">
         <p class="day" id="day5">Thu</p>
-        <p class="desc" id="desc5">🌥️</p>
+        <p class="desc" id="desc5"></p>
         <p id="symbol5"></p>
-        <p class="temp" id="temp5">9°C</p>
+        <p class="temp" id="temp5"></p>
+        <hr>
+        <p> <span class="tempMinn" id="tempMin5"></span>
+            <span class="tempMaxn" id="tempMax5"></span>
+        </p>
+        <p class="humidityN" id="humidN5"></p>
+        <p class="windSpeedn" id="windS5"></p>
     </div>
 
 

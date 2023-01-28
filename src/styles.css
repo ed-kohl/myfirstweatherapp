@@ -95,6 +95,17 @@ border-radius:20px;
 
 }
 
+.note{
+    display:flexbox;
+    margin-right:0;
+    text-align:right;
+    font-style:italic;
+    margin-bottom:20px;
+    color:white;
+text-decoration:wavy;
+text-decoration-color:blue}
+
+
 .currentLocation{
     color: white;
     background-color:lightslategray;
@@ -196,9 +207,11 @@ margin: 0 auto;
 }
 
 .griditem:hover{
+    text-align:center;
     background-color:white;
     padding:10px 10px 10px 10px;
     border-radius:20px;
+    border:rgba(0, 98, 105, 1) 1px solid;
 }
 .day{
     font-weight:bold;
@@ -216,6 +229,8 @@ margin: 0 auto;
     color:rgba(50, 50, 130, 1);
     
 }
+
+
 
 .temp{
     font-size:20px;

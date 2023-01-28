@@ -142,6 +142,17 @@ countryOfCity.innerHTML=` ${tempInLoc.data.sys.country}`;
   let inKm=Math.round(`${tempInLoc.data.wind.speed*3.6}`);
   kmH.innerHTML=` [${inKm} km/h]`;
 
+let noteDis1=document.querySelector(`#noteText`);
+if (tempInLocation>=25){noteDis1.innerHTML=(`🌡️Its getting hot! <br> Please remember to drink water regularly and enjoy the sun 😎`)} 
+else
+{};
+if (tempInLocation>=10&tempInLocation<25){noteDis1.innerHTML=(`Comfortable temperature. Enjoy 😎`)} else{};
+if (tempInLocation<10&tempInLocation>=0){noteDis1.innerHTML=(`Low temperatures outside. <br> Please remember to keep warm!`)} 
+else
+{};
+if (tempInLocation<0){noteDis1.innerHTML=(`🥶It's freezing outside! Take care!`)} 
+else
+{};
 
 
 }
@@ -250,6 +261,8 @@ let windS4a=document.querySelector("#windS4");
 let temperature4=Math.round(`${weatherNext.data.list[4].main.temp}`);
 tempP4.innerHTML=`${temperature4} °C`;
 
+
+
 let weatherDesc4=(`${weatherNext.data.list[4].weather[0].description}`);
 de4.innerHTML=`${weatherDesc4}`;
 
@@ -357,7 +370,7 @@ buttonCity.addEventListener("click",currentLocation);
 
 function showUser(response) {
   
-  let currentDegrees= (Math.round(response.data.main.temp));
+  let currentDegrees= Math.round(response.data.main.temp);
   let h5 = document.querySelector(`#degrees`)
   h5.innerHTML= `${currentDegrees} °C`;
 
@@ -381,12 +394,19 @@ let windKm= document.querySelector(`#inkmH`);
 let windInKm= Math.round(`${response.data.wind.speed*3.6}`);
 windKm.innerHTML=` [${windInKm} km/h]`;
 
- console.log(response.data.sys.country);
-  console.log(response.data.main.feels_like);
-console.log(response.data.weather[0].description);
-console.log(response.data.wind.speed);
-km
-  
+let noteDis=document.querySelector(`#noteText`);
+if (currentDegrees>25){noteDis.innerHTML=(`🌡️Its getting hot! <br> Please Remember to drink water regularly and enjoy the sun 😎`)} 
+else
+{};
+if (currentDegrees>10&currentDegrees<25){noteDis.innerHTML=(``)} else{};
+if (currentDegrees<10&currentDegrees>0){noteDis.innerHTML=(`🥶It's getting colder! <br> Please Remember to keep warm!`)} 
+else
+{};
+if (currentDegrees<=0){noteDis.innerHTML=(`🥶It's freezing outside! Take care!`)} 
+else
+{};
+
+
 }
 
 function showCity(response){
@@ -420,11 +440,5 @@ let weatherforCastURL=
 }}
  
 
-
-
-
 let buttonCurrent=document.querySelector("#searchCurrentLocation");
 buttonCurrent.addEventListener("click",currentTemp);
-
-
-

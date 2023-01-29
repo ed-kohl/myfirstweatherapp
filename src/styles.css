@@ -95,6 +95,18 @@ border-radius:20px;
 
 }
 
+#celsius-link{
+    color:black;
+    font-style: bold;
+  
+    text-decoration:none;
+}
+#fahrenheit-link{
+    color:black;
+    font-style:bold;
+    text-decoration:none;
+
+}
 .note{
     display:flexbox;
     margin-right:0;
@@ -230,6 +242,14 @@ margin: 0 auto;
     
 }
 
+.cF{
+text-decoration:none;
+color:black;
+}
+
+.cF0{
+    margin-left:5px;
+}
 
 
 .temp{

@@ -1,9 +1,58 @@
+
 /*Date*/
 
 let apiKey="bd3bb6534458ba51b48c49f5155745b6";
 let date = new Date() ;
 console.log(date);
 
+
+let celsiusTemperature = null;
+let celsiusTempFeel=null;
+let tempDisplay=document.querySelector(`#degrees`);
+let tempFeel = document.querySelector(`#feelsLike`);
+let celsFeel=document.querySelector(`#celsius-feel`);
+let fahFeel= document.querySelector (`#fahrenheit-feel`);
+
+let celsiusTemperature1 = null; 
+let tempP1=document.querySelector("#temp1")
+let de1=document.querySelector("#desc1");
+let tempMin1a=document.querySelector("#tempMin1");
+
+
+let humidN1a=document.querySelector("#humidN1");
+let windS1a=document.querySelector("#windS1");
+
+let celsiusTemperature2 = null;
+let tempP2=document.querySelector("#temp2")
+let de2=document.querySelector("#desc2");
+let tempMin2a=document.querySelector("#tempMin2");
+
+let humidN2a=document.querySelector("#humidN2");
+let windS2a=document.querySelector("#windS2");
+
+let celsiusTemperature3 = null;
+let tempP3=document.querySelector("#temp3")
+let de3=document.querySelector("#desc3");
+let tempMin3a=document.querySelector("#tempMin3");
+
+let humidN3a=document.querySelector("#humidN3");
+let windS3a=document.querySelector("#windS3");
+
+let celsiusTemperature4 = null;
+let tempP4=document.querySelector("#temp4")
+let de4=document.querySelector("#desc4");
+let tempMin4a=document.querySelector("#tempMin4");
+
+let humidN4a=document.querySelector("#humidN4");
+let windS4a=document.querySelector("#windS4");
+
+let celsiusTemperature5 = null;
+let tempP5=document.querySelector("#temp5")
+let de5=document.querySelector("#desc5");
+let tempMin5a=document.querySelector("#tempMin5");
+
+let humidN5a=document.querySelector("#humidN5");
+let windS5a=document.querySelector("#windS5");
 
 let days=["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let day=days[date.getDay()];
@@ -115,9 +164,12 @@ let urlWeather =
   axios.get(`${weatherNextDayURL}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`).then(showNextDay);
 }
 
+
+
 function showTemperature(tempInLoc){
-  let tempInLocation = Math.round(`${tempInLoc.data.main.temp}`);
-  let tempFeel=Math.round(`${tempInLoc.data.main.feels_like}`);
+
+  celsiusTemperature = Math.round(`${tempInLoc.data.main.temp}`);
+  celsiusTempFeel= Math.round(`${tempInLoc.data.main.feels_like}`);
   
 let writtenbyUser=document.querySelector(`#cityDisplay`);
 writtenbyUser.innerHTML=`${tempInLoc.data.name}`;
@@ -125,11 +177,11 @@ let countryOfCity=document.querySelector(`#countryDisplay`);
 countryOfCity.innerHTML=` ${tempInLoc.data.sys.country}`;
 
 
-  let currentTemp = document.querySelector(`#degrees`);
-  currentTemp.innerHTML= `${tempInLocation} °C`;
 
-  let feelTemp=document.querySelector(`#feelsLike`);
-  feelTemp.innerHTML=`feels like: ${tempFeel} °C`;
+  tempDisplay.innerHTML= `${celsiusTemperature}`;
+
+  
+  tempFeel.innerHTML=` ${celsiusTempFeel}`;
 
   let description =document.querySelector(`#weatherdesc`);
   description.innerHTML=`, current weather: ${tempInLoc.data.weather[0].description} `;
@@ -143,14 +195,14 @@ countryOfCity.innerHTML=` ${tempInLoc.data.sys.country}`;
   kmH.innerHTML=` [${inKm} km/h]`;
 
 let noteDis1=document.querySelector(`#noteText`);
-if (tempInLocation>=25){noteDis1.innerHTML=(`🌡️Its getting hot! <br> Please remember to drink water regularly and enjoy the sun 😎`)} 
+if (celsiusTemperature>=25){noteDis1.innerHTML=(`🌡️Its getting hot! <br> Please remember to drink water regularly, take care and enjoy the sun 😎`)} 
 else
 {};
-if (tempInLocation>=10&tempInLocation<25){noteDis1.innerHTML=(`Comfortable temperature. Enjoy 😎`)} else{};
-if (tempInLocation<10&tempInLocation>=0){noteDis1.innerHTML=(`Low temperatures outside. <br> Please remember to keep warm!`)} 
+if (celsiusTemperature>=15&celsiusTemperature<25){noteDis1.innerHTML=(`Please enjoy the comfortable temperature 😎`)} else{};
+if (celsiusTemperature<15&celsiusTemperature>=0){noteDis1.innerHTML=(`Low temperatures outside. <br> Please remember to keep warm!`)} 
 else
 {};
-if (tempInLocation<0){noteDis1.innerHTML=(`🥶It's freezing outside! Take care!`)} 
+if (celsiusTemperature<0){noteDis1.innerHTML=(`🥶It's freezing outside! Take care!`)} 
 else
 {};
 
@@ -161,24 +213,17 @@ else
 
 function showNextDay(weatherNext)
 {
-let tempP1=document.querySelector("#temp1")
-let de1=document.querySelector("#desc1");
-let tempMin1a=document.querySelector("#tempMin1");
-let tempMax1a=document.querySelector("#tempMax1");
-let humidN1a=document.querySelector("#humidN1");
-let windS1a=document.querySelector("#windS1");
 
-let temperature1=Math.round(`${weatherNext.data.list[1].main.temp}`);
-tempP1.innerHTML=`${temperature1} °C`;
+console.log(weatherNext);
+celsiusTemperature1= Math.round(`${weatherNext.data.list[1].main.temp}`);
+tempP1.innerHTML= `${celsiusTemperature1}`;
 
-let weatherDesc1=(`${weatherNext.data.list[1].weather[0].description}`)
-;de1.innerHTML=`${weatherDesc1}`;
 
-let tempMin1=Math.round(`${weatherNext.data.list[1].main.temp_min}`);
-tempMin1a.innerHTML=`🌡️ ${tempMin1} - `;
+let weatherDesc1=(`${weatherNext.data.list[1].weather[0].description}`);
+de1.innerHTML=`${weatherDesc1}`;
 
-let tempMax1=Math.round(`${weatherNext.data.list[1].main.temp_max}`);
-tempMax1a.innerHTML=` ${tempMax1} °C `;
+let tempFeel1=Math.round(`${weatherNext.data.list[1].main.feels_like}`);
+tempMin1a.innerHTML= `🌡️ feels like ${tempFeel1} `;
 
 
 let humidN1= Math.round(`${weatherNext.data.list[1].main.humidity}`);
@@ -188,26 +233,14 @@ let windS1=(`${weatherNext.data.list[1].wind.speed}`);
 windS1a.innerHTML=`🍃 ${windS1} m/s`;
 
 
-
-
-let tempP2=document.querySelector("#temp2")
-let de2=document.querySelector("#desc2");
-let tempMin2a=document.querySelector("#tempMin2");
-let tempMax2a=document.querySelector("#tempMax2");
-let humidN2a=document.querySelector("#humidN2");
-let windS2a=document.querySelector("#windS2");
-
-let temperature2=Math.round(`${weatherNext.data.list[2].main.temp}`);
-tempP2.innerHTML=`${temperature2} °C`;
+celsiusTemperature2= Math.round(`${weatherNext.data.list[2].main.temp}`);
+tempP2.innerHTML= `${celsiusTemperature2}`;
 
 let weatherDesc2=(`${weatherNext.data.list[2].weather[0].description}`);
 de2.innerHTML=`${weatherDesc2}`;
 
-let tempMin2=Math.round(`${weatherNext.data.list[2].main.temp_min}`);
-tempMin2a.innerHTML=`🌡️ ${tempMin2} - `;
-
-let tempMax2=Math.round(`${weatherNext.data.list[2].main.temp_max}`);
-tempMax2a.innerHTML=` ${tempMax2} °C `;
+let tempFeel2=Math.round(`${weatherNext.data.list[2].main.feels_like}`);
+tempMin2a.innerHTML=`🌡️ feels like ${tempFeel2}`;
 
 
 let humidN2= Math.round(`${weatherNext.data.list[2].main.humidity}`);
@@ -216,31 +249,18 @@ humidN2a.innerHTML=`💧 ${humidN2} %`;
 let windS2=(`${weatherNext.data.list[2].wind.speed}`);
 windS2a.innerHTML=`🍃 ${windS2} m/s`;
 
+celsiusTemperature3= Math.round(`${weatherNext.data.list[3].main.temp}`);
+tempP3.innerHTML= `${celsiusTemperature3}`;
 
-
-
-let tempP3=document.querySelector("#temp3")
-let de3=document.querySelector("#desc3");
-let tempMin3a=document.querySelector("#tempMin3");
-let tempMax3a=document.querySelector("#tempMax3");
-let humidN3a=document.querySelector("#humidN3");
-let windS3a=document.querySelector("#windS3");
-
-
-
-
-let temperature3=Math.round(`${weatherNext.data.list[3].main.temp}`);
-tempP3.innerHTML=`${temperature3} °C`;
 
 let weatherDesc3=(`${weatherNext.data.list[3].weather[0].description}`);
 de3.innerHTML=`${weatherDesc3}`;
 
 
-let tempMin3=Math.round(`${weatherNext.data.list[3].main.temp_min}`);
-tempMin3a.innerHTML=`🌡️ ${tempMin3} - `;
+let tempFeel3=Math.round(`${weatherNext.data.list[3].main.feels_like}`);
+tempMin3a.innerHTML=`🌡️ feels like ${tempFeel3}  `;
 
-let tempMax3=Math.round(`${weatherNext.data.list[3].main.temp_max}`);
-tempMax3a.innerHTML=`${tempMax3} °C`;
+
 
 
 let humidN3= Math.round(`${weatherNext.data.list[3].main.humidity}`);
@@ -250,28 +270,14 @@ let windS3=(`${weatherNext.data.list[3].wind.speed}`);
 windS3a.innerHTML=`🍃 ${windS3} m/s`;
 
 
-let tempP4=document.querySelector("#temp4")
-let de4=document.querySelector("#desc4");
-let tempMin4a=document.querySelector("#tempMin4");
-let tempMax4a=document.querySelector("#tempMax4");
-let humidN4a=document.querySelector("#humidN4");
-let windS4a=document.querySelector("#windS4");
-
-
-let temperature4=Math.round(`${weatherNext.data.list[4].main.temp}`);
-tempP4.innerHTML=`${temperature4} °C`;
-
-
+celsiusTemperature4= Math.round(`${weatherNext.data.list[4].main.temp}`);
+tempP4.innerHTML= `${celsiusTemperature4}`;
 
 let weatherDesc4=(`${weatherNext.data.list[4].weather[0].description}`);
 de4.innerHTML=`${weatherDesc4}`;
 
-let tempMin4=Math.round(`${weatherNext.data.list[4].main.temp_min}`);
-tempMin4a.innerHTML=`🌡️ ${tempMin4} -`;
-
-let tempMax4=Math.round(`${weatherNext.data.list[4].main.temp_max}`);
-tempMax4a.innerHTML=` ${tempMax4} °C`;
-
+let tempFeel4=Math.round(`${weatherNext.data.list[4].main.feels_like}`);
+tempMin4a.innerHTML=`🌡️ feels like  ${tempFeel4}`;
 
 let humidN4= Math.round(`${weatherNext.data.list[4].main.humidity}`);
 humidN4a.innerHTML=`💧 ${humidN4} %`;
@@ -279,25 +285,17 @@ humidN4a.innerHTML=`💧 ${humidN4} %`;
 let windS4=(`${weatherNext.data.list[4].wind.speed}`);
 windS4a.innerHTML=`🍃 ${windS4} m/s`;
 
-let tempP5=document.querySelector("#temp5")
-let de5=document.querySelector("#desc5");
-let tempMin5a=document.querySelector("#tempMin5");
-let tempMax5a=document.querySelector("#tempMax5");
-let humidN5a=document.querySelector("#humidN5");
-let windS5a=document.querySelector("#windS5");
 
-let temperature5=Math.round(`${weatherNext.data.list[5].main.temp}`);
-tempP5.innerHTML=`${temperature5} °C`;
+celsiusTemperature5= Math.round(`${weatherNext.data.list[5].main.temp}`);
+tempP5.innerHTML= `${celsiusTemperature5}`;
+
 
 let weatherDesc5=(`${weatherNext.data.list[5].weather[0].description}`);
 de5.innerHTML=`${weatherDesc5}`;
 
 
-let tempMin5=Math.round(`${weatherNext.data.list[5].main.temp_min}`);
-tempMin5a.innerHTML=`🌡️ ${tempMin5} - `;
-
-let tempMax5=Math.round(`${weatherNext.data.list[5].main.temp_max}`);
-tempMax5a.innerHTML=` ${tempMax5} °C`;
+let tempFeel5=Math.round(`${weatherNext.data.list[5].main.feels_like}`);
+tempMin5a.innerHTML=`🌡️ feels like ${tempFeel5} `;
 
 
 let humidN5= Math.round(`${weatherNext.data.list[5].main.humidity}`);
@@ -311,8 +309,7 @@ windS5a.innerHTML=`🍃 ${windS5} m/s`;
 let s1=document.querySelector(`#symbol1`)
 let mainWeather1=`${weatherNext.data.list[1].weather[0].main}`;
 
-if (mainWeather1==="Clouds"){
-s1.innerHTML=`🌤️`} else{};
+if (mainWeather1==="Clouds"){s1.innerHTML=`🌤️`} else{};
 if (mainWeather1==="Clear"){s1.innerHTML=`☀️`} else{};
 if (mainWeather1==="Snow"){s1.innerHTML=`🌨️`} else{};
 if (mainWeather1==="Rain"){s1.innerHTML=`🌧️`} else{};
@@ -321,8 +318,7 @@ if (mainWeather1==="Storm"){s1.innerHTML=`⛈️`}else{};
 let s2=document.querySelector(`#symbol2`)
 let mainWeather2=`${weatherNext.data.list[2].weather[0].main}`;
 
-if (mainWeather2==="Clouds"){
-s2.innerHTML=`🌤️`} else{};
+if (mainWeather2==="Clouds"){s2.innerHTML=`🌤️`} else{};
 if (mainWeather2==="Clear"){s2.innerHTML=`☀️`} else{};
 if (mainWeather2==="Snow"){s2.innerHTML=`🌨️`} else{};
 if (mainWeather2==="Rain"){s2.innerHTML=`🌧️`} else{};
@@ -364,23 +360,41 @@ let buttonCity=document.querySelector("#searchInput");
 buttonCity.addEventListener("click",currentLocation);
 
 
+function fahrenheitToCelsiusFeel(event){
+  event.preventDefault()
+  tempFeel.innerHTML= Math.round((celsiusTempFeel*1.8)+32);
+  console.log (celsiusTempFeel);
+}
+
+
+function celsiusToFahrenheitFeel(event)
+{event.preventDefault()
+ tempFeel.innerHTML=celsiusTempFeel;
+
+}
+
+
+fahFeel.addEventListener("click", fahrenheitToCelsiusFeel);
+
+celsFeel.addEventListener("click", celsiusToFahrenheitFeel);
+
 
 
 
 
 function showUser(response) {
   
-  let currentDegrees= Math.round(response.data.main.temp);
-  let h5 = document.querySelector(`#degrees`)
-  h5.innerHTML= `${currentDegrees} °C`;
+  celsiusTemperature= Math.round(response.data.main.temp);
+  
+  tempDisplay.innerHTML= `${celsiusTemperature}`;
 
 let coun = document.querySelector(`#countryDisplay`);
 let currentCoun =`${response.data.sys.country}`;
 coun.innerHTML=`${response.data.sys.country}`;
 
 let curF =document.querySelector(`#feelsLike`);
-let curFeel=`${response.data.main.feels_like}`;
-curF.innerHTML=`feels like: ${curFeel} °C, `;
+celsiusTempFeel=`${response.data.main.feels_like}`;
+curF.innerHTML=`${celsiusTempFeel}`;
 
 let weD = document.querySelector(`#weatherdesc`);
 let weatDe=`${response.data.weather[0].description}`;
@@ -395,14 +409,14 @@ let windInKm= Math.round(`${response.data.wind.speed*3.6}`);
 windKm.innerHTML=` [${windInKm} km/h]`;
 
 let noteDis=document.querySelector(`#noteText`);
-if (currentDegrees>25){noteDis.innerHTML=(`🌡️Its getting hot! <br> Please Remember to drink water regularly and enjoy the sun 😎`)} 
+if (celsiusTemperature>25){noteDis.innerHTML=(`🌡️Its getting hot! <br> Please remember to drink water regularly and enjoy the sun 😎`)} 
 else
 {};
-if (currentDegrees>10&currentDegrees<25){noteDis.innerHTML=(``)} else{};
-if (currentDegrees<10&currentDegrees>0){noteDis.innerHTML=(`🥶It's getting colder! <br> Please Remember to keep warm!`)} 
+if (celsiusTemperature>15&celsiusTemperature<25){noteDis.innerHTML=(`Please enjoy the comfortable temperature.`)} else{};
+if (celsiusTemperature<15&celsiusTemperature>0){noteDis.innerHTML=(`🥶It's getting colder! <br> Please remember to keep warm!`)} 
 else
 {};
-if (currentDegrees<=0){noteDis.innerHTML=(`🥶It's freezing outside! Take care!`)} 
+if (celsiusTemperature<=0){noteDis.innerHTML=(`🥶It's freezing outside! Take care!`)} 
 else
 {};
 
@@ -439,6 +453,113 @@ let weatherforCastURL=
 
 }}
  
-
 let buttonCurrent=document.querySelector("#searchCurrentLocation");
 buttonCurrent.addEventListener("click",currentTemp);
+
+/*conversions of units*/
+
+
+
+
+function fahrenheitToCelsius(event){
+  event.preventDefault()
+  tempDisplay.innerHTML=(Math.round(celsiusTemperature*1.8)+32);
+  
+}
+
+function celsiusToFahrenheit (event)
+{event.preventDefault()
+ tempDisplay.innerHTML=celsiusTemperature; 
+}
+
+let fahrenheitLink=document.querySelector(`#fahrenheit-link`);
+fahrenheitLink.addEventListener("click", fahrenheitToCelsius);
+
+let celsiusLink=document.querySelector(`#celsius-link`)
+celsiusLink.addEventListener("click", celsiusToFahrenheit);
+
+
+
+function fahrenheitToCelsius1(event)
+{
+  event.preventDefault()
+  tempP1.innerHTML=(Math.round(celsiusTemperature1*1.8)+32);
+  
+}
+
+function celsiusToFahrenheit1 (event)
+{event.preventDefault()
+ tempP1.innerHTML=celsiusTemperature1; 
+}
+
+let fahrenheitLink1=document.querySelector(`#fahrenheit-link1`);
+fahrenheitLink1.addEventListener("click", fahrenheitToCelsius1);
+
+let celsiusLink1=document.querySelector(`#celsius-link1`)
+celsiusLink1.addEventListener("click", celsiusToFahrenheit1);
+
+function fahrenheitToCelsius2(event){
+  event.preventDefault()
+  tempP2.innerHTML=(Math.round(celsiusTemperature2*1.8)+32);
+}
+
+function celsiusToFahrenheit2 (event)
+{event.preventDefault()
+ tempP2.innerHTML=celsiusTemperature2; 
+}
+
+let fahrenheitLink2=document.querySelector(`#fahrenheit-link2`);
+fahrenheitLink2.addEventListener("click", fahrenheitToCelsius2);
+
+let celsiusLink2=document.querySelector(`#celsius-link2`)
+celsiusLink2.addEventListener("click", celsiusToFahrenheit2);
+
+function fahrenheitToCelsius3(event){
+  event.preventDefault()
+  tempP3.innerHTML=(Math.round(celsiusTemperature3*1.8)+32);
+}
+
+function celsiusToFahrenheit3 (event)
+{event.preventDefault()
+ tempP3.innerHTML=celsiusTemperature3; 
+}
+
+let fahrenheitLink3=document.querySelector(`#fahrenheit-link3`);
+fahrenheitLink3.addEventListener("click", fahrenheitToCelsius3);
+
+let celsiusLink3=document.querySelector(`#celsius-link3`)
+celsiusLink3.addEventListener("click", celsiusToFahrenheit3);
+
+function fahrenheitToCelsius4(event){
+  event.preventDefault()
+  tempP4.innerHTML=(Math.round(celsiusTemperature4*1.8)+32);
+  
+}
+
+function celsiusToFahrenheit4 (event)
+{event.preventDefault()
+ tempP4.innerHTML=celsiusTemperature4; 
+}
+
+let fahrenheitLink4=document.querySelector(`#fahrenheit-link4`);
+fahrenheitLink4.addEventListener("click", fahrenheitToCelsius4);
+
+let celsiusLink4=document.querySelector(`#celsius-link4`)
+celsiusLink4.addEventListener("click", celsiusToFahrenheit4);
+
+function fahrenheitToCelsius5(event){
+  event.preventDefault()
+  tempP5.innerHTML=(Math.round(celsiusTemperature5*1.8)+32);
+  
+}
+
+function celsiusToFahrenheit5 (event)
+{event.preventDefault()
+ tempP5.innerHTML=celsiusTemperature5; 
+}
+
+let fahrenheitLink5=document.querySelector(`#fahrenheit-link5`);
+fahrenheitLink5.addEventListener("click", fahrenheitToCelsius5);
+
+let celsiusLink5=document.querySelector(`#celsius-link5`)
+celsiusLink5.addEventListener("click", celsiusToFahrenheit5);

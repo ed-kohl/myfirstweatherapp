@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,141 +8,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <link rel="stylesheet" type="text/css" href="src/styles.css" >    
+    <link rel="stylesheet" type="text/css" href="src/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Current weather - around the world</title>
 </head>
 
 <body class="body">
 
     <div class="container app_background">
-        <div class="row" >
-<div class="col search_left">
-    <h1 class="task">Explore the current weather
 
-    </h1>
-<nav class="searchBar">
-    <div class="" >
-        <h5></h5>
-        <form class="d-flex" role="search"  id="form1" method="post" value="">
-            
-            <label><input class="form-control me2" type="text" id="label1" placeholder="Please search for a city" value=""></label>l
-            
-            <button class="buttonSearch" type="submit" id="searchInput" >
-                Search
-            </button>
-            
-           
-        </form>
-        <button class="currentLocation" type="submit" id="searchCurrentLocation">
-            Current Location
-        </button>
+        <div class="row">
+            <div class="col search_left">
+                <h1 class="task">Explore the current weather
+
+                </h1>
+                <nav class="searchBar">
+                    <div class="">
+                        <h5></h5>
+                        <form class="d-flex" role="search" id="form1" method="post" value="">
+
+                            <label><input class="form-control me2" type="text" id="label1"
+                                    placeholder="Please search for a city" value=""></label>l
+
+                            <button class="buttonSearch" type="submit" id="searchInput">
+                                Search
+                            </button>
+
+
+                        </form>
+                        <button class="currentLocation" type="submit" id="searchCurrentLocation">
+                            Current Location
+                        </button>
+                    </div>
+                    <div class="note"><span id="noteText"></span></div>
+
+                </nav>
+
+
+
+
+            </div>
+            <img src="images/cat-1144198_1280.png" title="curious like a cat" id="cat">
+            <div class="weatherDisplay">
+                <h2> <span id="cityDisplay"></span><span id="countryDisplay"></span></h2>
+                <h3 class="weather_temperature today"><span id="dayDis"></span><span id="hourDis"></span></h3>
+
+                <p class="weather_temperature"> </p>
+                <p><span class="weather_temperature" id="degrees"></span><span class="weather_temperature">
+                        <sup><a href="" class="units" id="celsius-link">C° </a> | <a href="" class="units" id="fahrenheit-link">F°</a></sup></span>
+                </p>
+                <p class="weather_temperature results"> <i>feels like:</i> <span id="feelsLike"></span>
+                    <sup ><small><a href="" class="units" id="celsius-feel">C°</a>|<a href="" class="units" id="fahrenheit-feel">F°</a></small></sup>
+                    <span
+                        id="weatherdesc"></span></p>
+                <p><span class="weather_temperature results" id="windSpeed"></span>
+                    <span class="weather_temperature results" id="inkmH"></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="weathergrid">
+
+            <div class="griditem">
+                <p class="day" id="day1">Sun</p>
+                <p class="desc" id="desc1"></p>
+                <p id="symbol1"></p>
+                <p class="temp"><span id="temp1"></span><sup><small class="cF0"><a href="" class="cF"
+                                id="celsius-link1">C°</a>|
+                            <a href="" class="cF" id="fahrenheit-link1">F°</a></small></sup></p>
+                <hr>
+                <p><span class="tempMinn" id="tempMin1"></span>
+              
+
+                </p>
+                <p class="humidityN" id="humidN1"></p>
+                <p class="windSpeedn" id="windS1"></p>
+            </div>
+            <div class="griditem">
+                <p class="day" id="day2">Mon</p>
+                <p class="desc" id="desc2"></p>
+                <p id="symbol2"></p>
+                <p class="temp"><span id="temp2"></span><sup><small class="cF0"><a href="" class="cF"
+                                id="celsius-link2">C°</a>|
+                            <a href="" class="cF" id="fahrenheit-link2">F°</a></small></sup></p>
+                <hr>
+                <p> <span class="tempMinn" id="tempMin2"></span>
+                
+
+                </p>
+                <p class="humidityN" id="humidN2"></p>
+                <p class="windSpeedn" id="windS2"></p>
+
+            </div>
+            <div class="griditem">
+                <p class="day" id="day3">Tue</p>
+                <p class="desc" id="desc3"></p>
+                <p id="symbol3"></p>
+                <p class="temp"> <span id="temp3"></span><sup><small class="cF0"><a href="" class="cF"
+                                id="celsius-link3">C°</a>|
+                            <a href="" class="cF" id="fahrenheit-link3">F°</a></small></sup></p>
+                <hr>
+                <p>
+                    <span class="tempMinn" id="tempMin3"></span>
+                    
+
+                </p>
+                <p class="humidityN" id="humidN3"></p>
+                <p class="windSpeedn" id="windS3"></p>
+            </div>
+            <div class="griditem">
+                <p class="day" id="day4">Wed</p>
+                <p class="desc" id="desc4"></p>
+                <p id="symbol4"></p>
+                <p class="temp"><span id="temp4"></span><sup><small class="cF0"><a href="" class="cF"
+                                id="celsius-link4">C°</a>|
+                            <a href="" class="cF" id="fahrenheit-link4">F°</a></small></sup></p>
+                <hr>
+                <p> <span class="tempMinn" id="tempMin4"></span>
+                   
+                </p>
+                <p class="humidityN" id="humidN4"></p>
+                <p class="windSpeedn" id="windS4"></p>
+            </div>
+            <div class="griditem">
+                <p class="day" id="day5">Thu</p>
+                <p class="desc" id="desc5"></p>
+                <p id="symbol5"></p>
+                <p class="temp"><span id="temp5"></span><sup><small class="cF0"><a href="" class="cF"
+                                id="celsius-link5">C°</a>|
+                            <a href="" class="cF" id="fahrenheit-link5">F°</a></small></sup></p>
+                <hr>
+                <p> <span class="tempMinn" id="tempMin5"></span>
+                    
+                </p>
+                <p class="humidityN" id="humidN5"></p>
+                <p class="windSpeedn" id="windS5"></p>
+            </div>
+
+
+        </div>
+
     </div>
-    <div class="note"><span id="noteText"></span></div>
-
-</nav>
-
-
-
-
-</div>
-<img src="images/cat-1144198_1280.png" title="curious like a cat" id="cat">
-<div class="weatherDisplay" ><h2> <span id="cityDisplay"></span><span id="countryDisplay"></span></h2>
-<h3 class="weather_temperature today"><span id="dayDis"></span><span id="hourDis"></span></h3>
-
-<p class="weather_temperature"> </p>
-<p><span class="weather_temperature" id="degrees">Temperature?</span><span class="weather_temperature">
-    <sup><a href="" id="celsius-link">C° </a> |  <a href="" id="fahrenheit-link">F°</a></sup></span></p>
-<p class="weather_temperature results"> <i></i> <span id="feelsLike"></span><span id="weatherdesc"></span></p>
-<p><span class="weather_temperature results" id="windSpeed"></span>
-    <span class="weather_temperature results" id="inkmH"></span></p>
-</div>
-</div>
-
-<div  class="weathergrid">
-
-    <div class="griditem">
-        <p class="day" id="day1">Sun</p>
-        <p class="desc" id="desc1"></p>
-        <p id="symbol1"></p> 
-        <p class="temp" ><span id="temp1"></span><sup><small class="cF0"><a href="" class="cF" id="celsius-link1" >C°</a>|
-            <a href="" class="cF" id="fahrenheit-link1">F°</a></small></sup></p>
-        <hr>
-        <p><span class="tempMinn" id="tempMin1"></span>
-            <span class="tempMaxn" id="tempMax1"></span> <br>
-        
-    </p>
-        <p class="humidityN" id="humidN1"></p>
-        <p class="windSpeedn" id="windS1"></p>
-    </div>
-    <div class="griditem"  >
-        <p class="day" id="day2">Mon</p>
-        <p class="desc" id="desc2"></p>
-        <p id="symbol2"></p>
-        <p class="temp"><span id="temp2"></span><sup><small class="cF0"><a href="" class="cF" id="celsius-link2">C°</a>|
-            <a href="" class="cF" id="fahrenheit-link2">F°</a></small></sup></p>
-        <hr>
-        <p> <span class="tempMinn" id="tempMin2"></span>
-            <span class="tempMaxn" id="tempMax2"></span>
-            
-        </p>
-        <p class="humidityN" id="humidN2"></p>
-        <p class="windSpeedn" id="windS2"></p>
-
-    </div>
-    <div class="griditem">
-        <p class="day" id="day3">Tue</p>
-        <p class="desc" id="desc3"></p>
-        <p  id="symbol3"></p>
-        <p class="temp"> <span id="temp3"></span><sup><small class="cF0"><a href="" class="cF" id="celsius-link3">C°</a>|
-            <a href="" class="cF" id="fahrenheit-link3">F°</a></small></sup></p>
-        <hr>
-        <p> 
-            <span class="tempMinn" id="tempMin3"></span>
-            <span class="tempMaxn" id="tempMax3"></span>
-          
-        </p>
-        <p class="humidityN" id="humidN3"></p>
-        <p class="windSpeedn" id="windS3"></p>
-    </div>
-    <div class="griditem">
-        <p class="day" id="day4">Wed</p>
-        <p class="desc" id="desc4"></p>
-        <p id="symbol4"></p>
-        <p class="temp"><span id="temp4"></span><sup><small  class="cF0"><a href="" class="cF" id="celsius-link4">C°</a>|
-            <a href="" class="cF" id="fahrenheit-link4">F°</a></small></sup></p>
-        <hr>
-        <p> <span class="tempMinn" id="tempMin4"></span>
-            <span class="tempMaxn" id="tempMax4"></span>
-        </p>
-        <p class="humidityN" id="humidN4"></p>
-        <p class="windSpeedn" id="windS4"></p>
-    </div>
-    <div class="griditem">
-        <p class="day" id="day5">Thu</p>
-        <p class="desc" id="desc5"></p>
-        <p id="symbol5"></p>
-        <p class="temp"><span id="temp5"></span><sup><small  class="cF0"><a href="" class="cF" id="celsius-link5">C°</a>|
-            <a href="" class="cF" id="fahrenheit-link5">F°</a></small></sup></p>
-        <hr>
-        <p> <span class="tempMinn" id="tempMin5"></span>
-            <span class="tempMaxn" id="tempMax5"></span>
-        </p>
-        <p class="humidityN" id="humidN5"></p>
-        <p class="windSpeedn" id="windS5"></p>
-    </div>
-
-
-</div>
-
-    </div>
-    <div class="gitRef"> <a href="https://github.com/ed-kohl/myfirstweatherapp" title="Project on Github">Open Source project</a>
+    <div class="gitRef"> <a href="https://github.com/ed-kohl/myfirstweatherapp" title="Project on Github">Open Source
+            project</a>
         coded by
         Edeltraud Kohl </div>
     <script src="src/script.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    </body>
+</body>
 
 </html>

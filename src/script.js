@@ -7,6 +7,10 @@ console.log(date);
 let celsiusTemperature = null;
 let tempDisplay=document.querySelector(`#degrees`);
 
+let windS=null;
+let mprosec=document.querySelector(`#mprosec`);
+let kmproh=document.querySelector(`#kmproh`);
+
 let celsiusTemperature1 = null; 
 let tempP1=document.querySelector("#temp1")
 let de1=document.querySelector("#desc1");
@@ -174,14 +178,14 @@ countryOfCity.innerHTML=` ${tempInLoc.data.sys.country}`;
   tempDisplay.innerHTML= `${celsiusTemperature}`;
 
   let feelTemp=document.querySelector(`#feelsLike`);
-  feelTemp.innerHTML=`feels like: ${tempFeel} °C`;
+  feelTemp.innerHTML=` ${tempFeel}`;
 
   let description =document.querySelector(`#weatherdesc`);
   description.innerHTML=`, current weather: ${tempInLoc.data.weather[0].description} `;
   
   let wiS=document.querySelector(`#windSpeed`);
-  let winSp=`${tempInLoc.data.wind.speed}`;
-  wiS.innerHTML=`windspeed: ${winSp} m/s`;
+  windS=`${tempInLoc.data.wind.speed}`;
+  wiS.innerHTML=` ${windS}`;
 
   let kmH=document.querySelector(`#inkmH`);
   let inKm=Math.round(`${tempInLoc.data.wind.speed*3.6}`);
@@ -201,6 +205,24 @@ else
 
 
 }
+
+let windSpeed=document.querySelector(`#windSpeed`);
+
+function mprosecTokmproh (event){
+  event.preventDefault();
+ let speedInkmh=Math.round(windS*3.6);
+ 
+ windSpeed.innerHTML=`${speedInkmh}`;
+
+}
+function kmprohTompros(event){
+event.preventDefault();
+
+windSpeed.innerHTML=`${windS}`;
+}
+
+mprosec.addEventListener("click", kmprohTompros);
+kmproh.addEventListener("click", mprosecTokmproh);
 
 
 
@@ -367,9 +389,17 @@ if (mainWeather5==="Storm"){s5.innerHTML=`⛈️`}else{};
 let buttonCity=document.querySelector("#searchInput");
 buttonCity.addEventListener("click",currentLocation);
 
+function makeitlight(event)
+{event.preventDefault();
+
+let body= document.querySelector(`.body`);
+if (body.classList.contains("light"))
+{body.classList.remove("light");} else{body.classList.add ("light")}}
 
 
 
+let button= document.querySelector(`#themebutton`);
+button.addEventListener("click", makeitlight);
 
 
 function showUser(response) {
@@ -383,16 +413,16 @@ let currentCoun =`${response.data.sys.country}`;
 coun.innerHTML=`${response.data.sys.country}`;
 
 let curF =document.querySelector(`#feelsLike`);
-let curFeel=`${response.data.main.feels_like}`;
-curF.innerHTML=`feels like: ${curFeel} °C, `;
+let curFeel=Math.round(response.data.main.feels_like);
+curF.innerHTML=` ${curFeel}, `;
 
 let weD = document.querySelector(`#weatherdesc`);
 let weatDe=`${response.data.weather[0].description}`;
-weD.innerHTML=`current weather: ${weatDe}`;
+weD.innerHTML=` ${weatDe}`;
 
 let winS=document.querySelector(`#windSpeed`);
-let windSp=`${response.data.wind.speed} m/s`;
-winS.innerHTML=`wind speed: ${windSp}`;
+let windSp=`${response.data.wind.speed}`;
+winS.innerHTML=` ${windSp}`;
 
 let windKm= document.querySelector(`#inkmH`);
 let windInKm= Math.round(`${response.data.wind.speed*3.6}`);

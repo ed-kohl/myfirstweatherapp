@@ -16,7 +16,7 @@
 
 <body class="body">
 
-    <div class="container app_background">
+    <div class="container app_background" id="background">
         <div class="row" >
 <div class="col search_left">
     <h1 class="task">Explore the current weather
@@ -27,7 +27,7 @@
         <h5></h5>
         <form class="d-flex" role="search"  id="form1" method="post" value="">
             
-            <label><input class="form-control me2" type="text" id="label1" placeholder="Please search for a city" value=""></label>l
+            <label><input class="form-control me2" type="text" id="label1" placeholder="city name" value=""></label>l
             
             <button class="buttonSearch" type="submit" id="searchInput" >
                 Search
@@ -52,11 +52,12 @@
 <h3 class="weather_temperature today"><span id="dayDis"></span><span id="hourDis"></span></h3>
 
 <p class="weather_temperature"> </p>
-<p><span class="weather_temperature" id="degrees">Temperature?</span><span class="weather_temperature">
+<p><span class="weather_temperature" id="degrees"></span><span class="weather_temperature">
     <sup><a href="" id="celsius-link">C° </a> |  <a href="" id="fahrenheit-link">F°</a></sup></span></p>
-<p class="weather_temperature results"> <i></i> <span id="feelsLike"></span><span id="weatherdesc"></span></p>
-<p><span class="weather_temperature results" id="windSpeed"></span>
-    <span class="weather_temperature results" id="inkmH"></span></p>
+<p class="weather_temperature results"> <i>feels like:</i> <span id="feelsLike"></span> <span>C°</span></span><span id="weatherdesc"></span></p>
+<p class="weather_temperature results">windspeed: <span class="weather_temperature results" id="windSpeed"></span>
+   <sup><small > <a href="" id="mprosec">m/s</a>|
+    <a href="" id="kmproh">km/h</a></small></sup></p>
 </div>
 </div>
 
@@ -74,7 +75,8 @@
         
     </p>
         <p class="humidityN" id="humidN1"></p>
-        <p class="windSpeedn" id="windS1"></p>
+        <p class="windSpeedn" id="windS1"><span  class= "windSpeedn" id="windS1"></span>
+            </p>
     </div>
     <div class="griditem"  >
         <p class="day" id="day2">Mon</p>
@@ -88,8 +90,10 @@
             
         </p>
         <p class="humidityN" id="humidN2"></p>
-        <p class="windSpeedn" id="windS2"></p>
-
+        <p class="windSpeedn" > 
+            <span  class="windSpeedn" id="windS2"></span>
+          </p>
+     
     </div>
     <div class="griditem">
         <p class="day" id="day3">Tue</p>
@@ -134,13 +138,16 @@
     </div>
 
 
-</div>
-
+</div><button id="themebutton">Change theme</button>
+    
     </div>
+
     <div class="gitRef"> <a href="https://github.com/ed-kohl/myfirstweatherapp" title="Project on Github">Open Source project</a>
         coded by
-        Edeltraud Kohl </div>
-    <script src="src/script.js"></script>
+       <a href="https://de.linkedin.com/in/edeltraud-kohl/en?trk=public_profile_locale-url"  title ="me on linkedin">Edeltraud Kohl</a>
+    </div>
+   
+       <script src="src/script.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     </body>
 

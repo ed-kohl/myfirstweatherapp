@@ -28,6 +28,8 @@ h3{
 
 }
 
+
+
 #cat{
     max-height:100px;
     width:auto;
@@ -185,8 +187,9 @@ font-weight:bold;
 .app_background{
     border: 2px solid #000;
     border-radius:20px;
-    margin:20px 20px 20px 20px;
-    padding: 40px 40px 40px 40px;
+ 
+padding:5px 5px 5px 5px;   
+margin:5px 5px 5px 5px;
 background: linear-gradient(189deg, rgba(0, 98, 105, 1) 0%, rgba(242, 242, 234, 1) 100%);
     color: rgba(50, 50, 130, 1);
 }
@@ -278,7 +281,16 @@ color:black;
     font-size:12px;
     font-style:italic;}
  
+#mprosec{
+    color: grey;
+        text-decoration: none;
+    }
 
+
+#kmproh{
+    color: grey;
+    text-decoration: none;
+}
 
 
 #degrees{
@@ -286,9 +298,10 @@ color:black;
 }
 .gitRef{
   display:box;
-  max-width:1100px;
+  max-width:350px;
+  margin-top:40px;
   margin-left:38%;
-  margin-right: 38%;
+  margin-right: 0px;;
   font-style:italic;
   color: darkblue;
 }
@@ -297,9 +310,63 @@ color:black;
     color:darkblue;
 }
 
+
+
 img{
 max-width:100%;   
 margin-bottom:40px; 
 
 border-radius:20px;
 }
+
+.light{
+    background-color:lightskyblue;
+}
+
+
+.light h1{
+    color:black;
+
+
+}
+.light .app_background{
+background: 
+    white;
+    color:black;
+}
+
+.light .buttonSearch{
+    background-color:darkblue;
+    color:white;
+}
+.light label{
+    background-color: darkblue;
+}
+
+.light .today{
+    background-color:lightblue
+}
+.light #themebutton{
+    display: block;
+        margin: 0 auto;
+        border-radius: 20px;
+        background-color: darkblue;
+        color:white;
+        border: solid 1px silver;
+        box-shadow: 5px 5px silver;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        padding: 5px 5px 5px 5px;
+}
+
+
+#themebutton{
+    display:block;
+margin:0 auto;
+border-radius:20px;
+background-color:white;
+border: solid 1px silver;
+box-shadow:5px 5px silver;
+margin-top:40px;
+margin-bottom:20px;
+padding: 5px 5px 5px 5px;}

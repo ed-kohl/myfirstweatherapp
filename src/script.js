@@ -8,6 +8,19 @@ let celsiusTemperature = null;
 let tempDisplay=document.querySelector(`#degrees`);
 
 let windS=null;
+let windS1=null;
+let windS2=null;
+let windS3=null;
+let windS4=null;
+let windS5=null;
+let tempFeel1=null;
+let tempFeel2=null;
+let tempFeel3=null;
+let tempFeel4=null;
+let tempFeel5=null;
+
+let wiS=document.querySelector(`#windSpeed0`);
+
 let mprosec=document.querySelector(`#mprosec`);
 let kmproh=document.querySelector(`#kmproh`);
 
@@ -15,7 +28,8 @@ let celsiusTemperature1 = null;
 let tempP1=document.querySelector("#temp1")
 let de1=document.querySelector("#desc1");
 let tempMin1a=document.querySelector("#tempMin1");
-let tempMax1a=document.querySelector("#tempMax1");
+let cels1= document.querySelector(`#celsius-link1a`);
+let fah1=document.querySelector(`#fahrenheit-link1a`);
 let humidN1a=document.querySelector("#humidN1");
 let windS1a=document.querySelector("#windS1");
 
@@ -23,7 +37,8 @@ let celsiusTemperature2 = null;
 let tempP2=document.querySelector("#temp2")
 let de2=document.querySelector("#desc2");
 let tempMin2a=document.querySelector("#tempMin2");
-let tempMax2a=document.querySelector("#tempMax2");
+let cels2= document.querySelector(`#celsius-link2a`);
+let fah2=document.querySelector(`#fahrenheit-link2a`);
 let humidN2a=document.querySelector("#humidN2");
 let windS2a=document.querySelector("#windS2");
 
@@ -31,7 +46,8 @@ let celsiusTemperature3 = null;
 let tempP3=document.querySelector("#temp3")
 let de3=document.querySelector("#desc3");
 let tempMin3a=document.querySelector("#tempMin3");
-let tempMax3a=document.querySelector("#tempMax3");
+let cels3= document.querySelector(`#celsius-link3a`);
+let fah3=document.querySelector(`#fahrenheit-link3a`);
 let humidN3a=document.querySelector("#humidN3");
 let windS3a=document.querySelector("#windS3");
 
@@ -39,7 +55,8 @@ let celsiusTemperature4 = null;
 let tempP4=document.querySelector("#temp4")
 let de4=document.querySelector("#desc4");
 let tempMin4a=document.querySelector("#tempMin4");
-let tempMax4a=document.querySelector("#tempMax4");
+let cels4= document.querySelector(`#celsius-link4a`);
+let fah4=document.querySelector(`#fahrenheit-link4a`);
 let humidN4a=document.querySelector("#humidN4");
 let windS4a=document.querySelector("#windS4");
 
@@ -47,7 +64,8 @@ let celsiusTemperature5 = null;
 let tempP5=document.querySelector("#temp5")
 let de5=document.querySelector("#desc5");
 let tempMin5a=document.querySelector("#tempMin5");
-let tempMax5a=document.querySelector("#tempMax5");
+let cels5= document.querySelector(`#celsius-link5a`);
+let fah5=document.querySelector(`#fahrenheit-link5a`);;
 let humidN5a=document.querySelector("#humidN5");
 let windS5a=document.querySelector("#windS5");
 
@@ -162,6 +180,27 @@ let urlWeather =
 }
 
 
+let buttonmprosec=document.querySelector(`#mprosec`);
+let buttonkmproh=document.querySelector(`#kmproh`);
+function mprosectokmproh(event){
+  event.preventDefault()
+
+
+  let windSpeedkm=Math.round(windSpeed*3.6);
+  wiS.innerHTML=`${windSpeedkm}`;
+  
+
+}
+
+function kmprohtomprosec(event){
+  event.preventDefault()
+
+  wiS.innerHTML=`${windSpeed}`;
+
+}
+
+buttonkmproh.addEventListener ("click", mprosectokmproh);
+buttonmprosec.addEventListener ("click",kmprohtomprosec);
 
 function showTemperature(tempInLoc){
 
@@ -183,13 +222,11 @@ countryOfCity.innerHTML=` ${tempInLoc.data.sys.country}`;
   let description =document.querySelector(`#weatherdesc`);
   description.innerHTML=`, current weather: ${tempInLoc.data.weather[0].description} `;
   
-  let wiS=document.querySelector(`#windSpeed`);
-  windS=`${tempInLoc.data.wind.speed}`;
-  wiS.innerHTML=` ${windS}`;
+ 
+  windSpeed=`${tempInLoc.data.wind.speed}`;
+  wiS.innerHTML=` ${windSpeed}`;
 
-  let kmH=document.querySelector(`#inkmH`);
-  let inKm=Math.round(`${tempInLoc.data.wind.speed*3.6}`);
-  kmH.innerHTML=` [${inKm} km/h]`;
+
 
 let noteDis1=document.querySelector(`#noteText`);
 if (celsiusTemperature>=25){noteDis1.innerHTML=(`🌡️Its getting hot! <br> Please remember to drink water regularly, take care and enjoy the sun 😎`)} 
@@ -206,13 +243,14 @@ else
 
 }
 
-let windSpeed=document.querySelector(`#windSpeed`);
+/*
+let windSpeedn=document.querySelector(`#windSpeed0`);
 
 function mprosecTokmproh (event){
   event.preventDefault();
- let speedInkmh=Math.round(windS*3.6);
+ let speedInkmh=Math.round(windSpeed*3.6);
  
- windSpeed.innerHTML=`${speedInkmh}`;
+ windSpeedn.innerHTML=`${speedInkmh}`;
 
 }
 function kmprohTompros(event){
@@ -222,9 +260,185 @@ windSpeed.innerHTML=`${windS}`;
 }
 
 mprosec.addEventListener("click", kmprohTompros);
-kmproh.addEventListener("click", mprosecTokmproh);
+kmproh.addEventListener("click", mprosecTokmproh);*/
 
 
+
+function mprosecTokmproh1 (event){
+  event.preventDefault();
+ let speedInkmh1=Math.round(windS1*3.6);
+ 
+ windS1a.innerHTML=`${speedInkmh1}`;
+
+}
+function kmprohTompros1(event){
+event.preventDefault();
+
+windS1a.innerHTML=`${windS1}`;
+}
+
+mprosec1.addEventListener("click", kmprohTompros1);
+kmproh1.addEventListener("click", mprosecTokmproh1);
+
+
+
+function mprosecTokmproh2 (event){
+  event.preventDefault();
+ let speedInkmh2=Math.round(windS2*3.6);
+ 
+ windS2a.innerHTML=`${speedInkmh2}`;
+
+}
+function kmprohTompros2(event){
+event.preventDefault();
+
+windS2a.innerHTML=`${windS1}`;
+}
+
+mprosec2.addEventListener("click", kmprohTompros2);
+kmproh2.addEventListener("click", mprosecTokmproh2);
+
+
+
+function mprosecTokmproh3 (event){
+  event.preventDefault();
+ let speedInkmh3=Math.round(windS3*3.6);
+ 
+ windS3a.innerHTML=`${speedInkmh3}`;
+
+}
+function kmprohTompros3(event){
+event.preventDefault();
+
+windS3a.innerHTML=`${windS3}`;
+}
+
+mprosec3.addEventListener("click", kmprohTompros3);
+kmproh3.addEventListener("click", mprosecTokmproh3);
+
+
+function mprosecTokmproh4 (event){
+  event.preventDefault();
+ let speedInkmh4=Math.round(windS4*3.6);
+ 
+ windS4a.innerHTML=`${speedInkmh4}`;
+
+}
+function kmprohTompros4(event){
+event.preventDefault();
+
+windS4a.innerHTML=`${windS4}`;
+}
+
+mprosec4.addEventListener("click", kmprohTompros4);
+kmproh4.addEventListener("click", mprosecTokmproh4);
+
+
+function mprosecTokmproh5 (event){
+  event.preventDefault();
+ let speedInkmh5=Math.round(windS5*3.6);
+ 
+ windS5a.innerHTML=`${speedInkmh5}`;
+
+}
+function kmprohTompros5(event){
+event.preventDefault();
+
+windS5a.innerHTML=`${windS5}`;
+}
+
+mprosec5.addEventListener("click", kmprohTompros5);
+kmproh5.addEventListener("click", mprosecTokmproh5);
+
+
+
+
+function celstofah1(event){
+  event.preventDefault();
+ tempFeel1a=Math.round(tempFeel1*3.6);
+ 
+ tempMin1a.innerHTML=`${tempFeel1a}`;
+
+}
+function fahtocels1(event){
+event.preventDefault();
+
+tempMin1a.innerHTML=`${tempFeel1}`;
+}
+
+fah1.addEventListener("click", celstofah1);
+cels1.addEventListener("click", fahtocels1);
+
+
+
+function celstofah2(event){
+  event.preventDefault();
+ tempFeel2a=Math.round(tempFeel2*3.6);
+ 
+ tempMin2a.innerHTML=`${tempFeel2a}`;
+
+}
+function fahtocels2(event){
+event.preventDefault();
+
+tempMin2a.innerHTML=`${tempFeel2}`;
+}
+
+fah2.addEventListener("click", celstofah2);
+cels2.addEventListener("click", fahtocels2);
+
+
+function celstofah3(event){
+  event.preventDefault();
+ tempFeel3a=Math.round(tempFeel3*3.6);
+ 
+ tempMin3a.innerHTML=`${tempFeel3a}`;
+
+}
+function fahtocels3(event){
+event.preventDefault();
+
+tempMin3a.innerHTML=`${tempFeel3}`;
+}
+
+fah3.addEventListener("click", celstofah3);
+cels3.addEventListener("click", fahtocels3);
+
+
+
+function celstofah4(event){
+  event.preventDefault();
+ tempFeel4a=Math.round(tempFeel4*3.6);
+ 
+ tempMin4a.innerHTML=`${tempFeel4a}`;
+
+}
+function fahtocels4(event){
+event.preventDefault();
+
+tempMin4a.innerHTML=`${tempFeel4}`;
+}
+
+fah4.addEventListener("click", celstofah4);
+cels4.addEventListener("click", fahtocels4);
+
+
+
+function celstofah5(event){
+  event.preventDefault();
+ tempFeel5a=Math.round(tempFeel5*3.6);
+ 
+ tempMin5a.innerHTML=`${tempFeel5a}`;
+
+}
+function fahtocels5(event){
+event.preventDefault();
+
+tempMin5a.innerHTML=`${tempFeel5}`;
+}
+
+fah5.addEventListener("click", celstofah5);
+cels5.addEventListener("click", fahtocels5);
 
 function showNextDay(weatherNext)
 {
@@ -233,21 +447,17 @@ celsiusTemperature1= Math.round(`${weatherNext.data.list[1].main.temp}`);
 tempP1.innerHTML= `${celsiusTemperature1}`;
 
 
-let weatherDesc1=(`${weatherNext.data.list[1].weather[0].description}`)
-;de1.innerHTML=`${weatherDesc1}`;
+let weatherDesc1=(`${weatherNext.data.list[1].weather[0].description}`);
+ de1.innerHTML=`${weatherDesc1}`;
 
-let tempMin1=Math.round(`${weatherNext.data.list[1].main.temp_min}`);
-tempMin1a.innerHTML=`🌡️ ${tempMin1} - `;
-
-let tempMax1=Math.round(`${weatherNext.data.list[1].main.temp_max}`);
-tempMax1a.innerHTML=` ${tempMax1} °C `;
-
+tempFeel1=Math.round(`${weatherNext.data.list[1].main.feels_like}`);
+tempMin1.innerHTML=`${tempFeel1} `;
 
 let humidN1= Math.round(`${weatherNext.data.list[1].main.humidity}`);
-humidN1a.innerHTML=`💧 ${humidN1} %`;
+humidN1a.innerHTML=` ${humidN1} %`;
 
-let windS1=(`${weatherNext.data.list[1].wind.speed}`);
-windS1a.innerHTML=`🍃 ${windS1} m/s`;
+windS1=(`${weatherNext.data.list[1].wind.speed}`);
+windS1a.innerHTML=`${windS1} `;
 
 
 celsiusTemperature2= Math.round(`${weatherNext.data.list[2].main.temp}`);
@@ -256,18 +466,15 @@ tempP2.innerHTML= `${celsiusTemperature2}`;
 let weatherDesc2=(`${weatherNext.data.list[2].weather[0].description}`);
 de2.innerHTML=`${weatherDesc2}`;
 
-let tempMin2=Math.round(`${weatherNext.data.list[2].main.temp_min}`);
-tempMin2a.innerHTML=`🌡️ ${tempMin2} - `;
-
-let tempMax2=Math.round(`${weatherNext.data.list[2].main.temp_max}`);
-tempMax2a.innerHTML=` ${tempMax2} °C `;
+tempFeel2=Math.round(`${weatherNext.data.list[2].main.feels_like}`);
+tempMin2.innerHTML=` ${tempFeel2} `;
 
 
 let humidN2= Math.round(`${weatherNext.data.list[2].main.humidity}`);
-humidN2a.innerHTML=`💧 ${humidN2} %`;
+humidN2a.innerHTML=` ${humidN2} %`;
 
-let windS2=(`${weatherNext.data.list[2].wind.speed}`);
-windS2a.innerHTML=`🍃 ${windS2} m/s`;
+windS2=(`${weatherNext.data.list[2].wind.speed}`);
+windS2a.innerHTML=` ${windS2}`;
 
 celsiusTemperature3= Math.round(`${weatherNext.data.list[3].main.temp}`);
 tempP3.innerHTML= `${celsiusTemperature3}`;
@@ -277,18 +484,16 @@ let weatherDesc3=(`${weatherNext.data.list[3].weather[0].description}`);
 de3.innerHTML=`${weatherDesc3}`;
 
 
-let tempMin3=Math.round(`${weatherNext.data.list[3].main.temp_min}`);
-tempMin3a.innerHTML=`🌡️ ${tempMin3} - `;
+tempFeel3=Math.round(`${weatherNext.data.list[3].main.feels_like}`);
+tempMin3.innerHTML=`${tempFeel3} `;
 
-let tempMax3=Math.round(`${weatherNext.data.list[3].main.temp_max}`);
-tempMax3a.innerHTML=`${tempMax3} °C`;
 
 
 let humidN3= Math.round(`${weatherNext.data.list[3].main.humidity}`);
-humidN3a.innerHTML=`💧 ${humidN3} %`;
+humidN3a.innerHTML=` ${humidN3} %`;
 
-let windS3=(`${weatherNext.data.list[3].wind.speed}`);
-windS3a.innerHTML=`🍃 ${windS3} m/s`;
+windS3=(`${weatherNext.data.list[3].wind.speed}`);
+windS3a.innerHTML=`${windS3}`;
 
 
 
@@ -299,18 +504,17 @@ tempP4.innerHTML= `${celsiusTemperature4}`;
 let weatherDesc4=(`${weatherNext.data.list[4].weather[0].description}`);
 de4.innerHTML=`${weatherDesc4}`;
 
-let tempMin4=Math.round(`${weatherNext.data.list[4].main.temp_min}`);
-tempMin4a.innerHTML=`🌡️ ${tempMin4} -`;
+tempFeel4=Math.round(`${weatherNext.data.list[4].main.feels_like}`);
+tempMin4.innerHTML=` ${tempFeel4} `;
 
-let tempMax4=Math.round(`${weatherNext.data.list[4].main.temp_max}`);
-tempMax4a.innerHTML=` ${tempMax4} °C`;
+
 
 
 let humidN4= Math.round(`${weatherNext.data.list[4].main.humidity}`);
-humidN4a.innerHTML=`💧 ${humidN4} %`;
+humidN4a.innerHTML=` ${humidN4} %`;
 
-let windS4=(`${weatherNext.data.list[4].wind.speed}`);
-windS4a.innerHTML=`🍃 ${windS4} m/s`;
+windS4=(`${weatherNext.data.list[4].wind.speed}`);
+windS4a.innerHTML=`${windS4} `;
 
 
 celsiusTemperature5= Math.round(`${weatherNext.data.list[5].main.temp}`);
@@ -321,18 +525,17 @@ let weatherDesc5=(`${weatherNext.data.list[5].weather[0].description}`);
 de5.innerHTML=`${weatherDesc5}`;
 
 
-let tempMin5=Math.round(`${weatherNext.data.list[5].main.temp_min}`);
-tempMin5a.innerHTML=`🌡️ ${tempMin5} - `;
+tempFeel5=Math.round(`${weatherNext.data.list[5].main.feels_like}`);
+tempMin5.innerHTML=` ${tempFeel5} `;
 
-let tempMax5=Math.round(`${weatherNext.data.list[5].main.temp_max}`);
-tempMax5a.innerHTML=` ${tempMax5} °C`;
+
 
 
 let humidN5= Math.round(`${weatherNext.data.list[5].main.humidity}`);
-humidN5a.innerHTML=`💧 ${humidN5} %`;
+humidN5a.innerHTML=` ${humidN5} %`;
 
-let windS5=(`${weatherNext.data.list[5].wind.speed}`);
-windS5a.innerHTML=`🍃 ${windS5} m/s`;
+windS5=(`${weatherNext.data.list[5].wind.speed}`);
+windS5a.innerHTML=`${windS5}`;
 
 
 
@@ -420,13 +623,12 @@ let weD = document.querySelector(`#weatherdesc`);
 let weatDe=`${response.data.weather[0].description}`;
 weD.innerHTML=` ${weatDe}`;
 
+/*
 let winS=document.querySelector(`#windSpeed`);
 let windSp=`${response.data.wind.speed}`;
 winS.innerHTML=` ${windSp}`;
+*/
 
-let windKm= document.querySelector(`#inkmH`);
-let windInKm= Math.round(`${response.data.wind.speed*3.6}`);
-windKm.innerHTML=` [${windInKm} km/h]`;
 
 let noteDis=document.querySelector(`#noteText`);
 if (celsiusTemperature>25){noteDis.innerHTML=(`🌡️Its getting hot! <br> Please remember to drink water regularly and enjoy the sun 😎`)} 

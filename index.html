@@ -52,10 +52,13 @@
 <h3 class="weather_temperature today"><span id="dayDis"></span><span id="hourDis"></span></h3>
 
 <p class="weather_temperature"> </p>
-<p><span class="weather_temperature" id="degrees"></span><span class="weather_temperature">
+<p><span class="weather_temperature" id="degrees"></span>
+    <span class="weather_temperature">
     <sup><a href="" id="celsius-link">C° </a> |  <a href="" id="fahrenheit-link">F°</a></sup></span></p>
-<p class="weather_temperature results"> <i>feels like:</i> <span id="feelsLike"></span> <span>C°</span></span><span id="weatherdesc"></span></p>
-<p class="weather_temperature results">windspeed: <span class="weather_temperature results" id="windSpeed"></span>
+<p class="weather_temperature results"> <i>feels like:</i> 
+    <span id="feelsLike"></span> <span>C°</span></span><span id="weatherdesc"></span></p>
+<p class="weather_temperature results">windspeed: 
+    <span class="weather_temperature results" id="windSpeed0"></span>
    <sup><small > <a href="" id="mprosec">m/s</a>|
     <a href="" id="kmproh">km/h</a></small></sup></p>
 </div>
@@ -70,12 +73,21 @@
         <p class="temp" ><span id="temp1"></span><sup><small class="cF0"><a href="" class="cF" id="celsius-link1" >C°</a>|
             <a href="" class="cF" id="fahrenheit-link1">F°</a></small></sup></p>
         <hr>
-        <p><span class="tempMinn" id="tempMin1"></span>
-            <span class="tempMaxn" id="tempMax1"></span> <br>
-        
-    </p>
-        <p class="humidityN" id="humidN1"></p>
-        <p class="windSpeedn" id="windS1"><span  class= "windSpeedn" id="windS1"></span>
+        <p class="tempMinn"><sup><small>feels like:</small></sup><br>🌡️ 
+            <span  id="tempMin1"></span>
+            <sup><small><a href="" id="celsius-link1a">C°</a>|
+                    <a href="" id="fahrenheit-link1a">F°</a> </small></sup>
+            </p>
+            <hr>
+        <p class="humidityN">
+            <sup><small>humidity:</small></sup><br>
+            💧
+            <span  id="humidN1"></span>
+        </p>
+        <hr>
+        <p class="windSpeedn" >🍃<span  class= "windSpeedn" id="windS1"></span>
+            <sup><small><a href="" id="mprosec1">m/s</a>|
+                 <a href= "" id="kmproh1">km/h</a> </small></sup>
             </p>
     </div>
     <div class="griditem"  >
@@ -85,13 +97,22 @@
         <p class="temp"><span id="temp2"></span><sup><small class="cF0"><a href="" class="cF" id="celsius-link2">C°</a>|
             <a href="" class="cF" id="fahrenheit-link2">F°</a></small></sup></p>
         <hr>
-        <p> <span class="tempMinn" id="tempMin2"></span>
-            <span class="tempMaxn" id="tempMax2"></span>
-            
+        <p class="tempMinn"> <sup><small>feels like:</small></sup><br>🌡️
+            <span  id="tempMin2"></span>
+        <sup><small><a href="" id="celsius-link2a">C°</a>|
+                <a href="" id="fahrenheit-link2a">F°</a> </small></sup>  
         </p>
-        <p class="humidityN" id="humidN2"></p>
-        <p class="windSpeedn" > 
+        <hr>
+        <p class="humidityN">´
+            <sup><small>humidity:</small></sup><br>
+            💧
+            <span id="humidN2"></span></p>
+        <hr>
+        <p class="windSpeedn" > 🍃
             <span  class="windSpeedn" id="windS2"></span>
+                <sup><small> <a href="" id="mprosec2">m/s</a> |
+                    <a href="" id="kmproh2">km/h</a></small></sup>
+            
           </p>
      
     </div>
@@ -102,13 +123,20 @@
         <p class="temp"> <span id="temp3"></span><sup><small class="cF0"><a href="" class="cF" id="celsius-link3">C°</a>|
             <a href="" class="cF" id="fahrenheit-link3">F°</a></small></sup></p>
         <hr>
-        <p> 
-            <span class="tempMinn" id="tempMin3"></span>
-            <span class="tempMaxn" id="tempMax3"></span>
+        <p class="tempMinn"> <sup><small>feels like:</small></sup><br>🌡️
+            <span  id="tempMin3"></span>
+        <sup><small><a href="" id="celsius-link3a">C°</a>|
+                <a href="" id="fahrenheit-link3a">F°</a> </small></sup>
           
         </p>
-        <p class="humidityN" id="humidN3"></p>
-        <p class="windSpeedn" id="windS3"></p>
+        <hr>
+        <p class="humidityN"> 
+        <sup><small>humidity:</small></sup><br>💧
+        <span id="humidN3"></span>
+            </p><hr>
+        <p class="windSpeedn">🍃<span id="windS3"></span><sup><small> 
+            <a href="" id="mprosec3">m/s</a> |
+                <a href="" id="kmproh3">km/h</a></small></sup></p>
     </div>
     <div class="griditem">
         <p class="day" id="day4">Wed</p>
@@ -117,11 +145,17 @@
         <p class="temp"><span id="temp4"></span><sup><small  class="cF0"><a href="" class="cF" id="celsius-link4">C°</a>|
             <a href="" class="cF" id="fahrenheit-link4">F°</a></small></sup></p>
         <hr>
-        <p> <span class="tempMinn" id="tempMin4"></span>
-            <span class="tempMaxn" id="tempMax4"></span>
-        </p>
-        <p class="humidityN" id="humidN4"></p>
-        <p class="windSpeedn" id="windS4"></p>
+        <p class="tempMinn"> <sup><small>feels like:</small></sup><br>
+            🌡️ <span  id="tempMin4"></span>
+            <sup><small><a href="" id="celsius-link4a">C°</a>|
+                    <a href="" id="fahrenheit-link4a">F°</a> </small></sup>
+        </p><hr>
+        <p class="humidityN">
+            <sup><small>humidity:</small></sup><br>💧<span id="humidN4">
+        </span></p><hr>
+        <p class="windSpeedn">🍃<span id="windS4"></span><sup><small>
+                    <a href="" id="mprosec4">m/s</a> |
+                    <a href="" id="kmproh4">km/h</a></small></sup></p>
     </div>
     <div class="griditem">
         <p class="day" id="day5">Thu</p>
@@ -130,11 +164,18 @@
         <p class="temp"><span id="temp5"></span><sup><small  class="cF0"><a href="" class="cF" id="celsius-link5">C°</a>|
             <a href="" class="cF" id="fahrenheit-link5">F°</a></small></sup></p>
         <hr>
-        <p> <span class="tempMinn" id="tempMin5"></span>
-            <span class="tempMaxn" id="tempMax5"></span>
-        </p>
-        <p class="humidityN" id="humidN5"></p>
-        <p class="windSpeedn" id="windS5"></p>
+        <p class="tempMinn"> <sup><small>feels like:</small></sup><br>🌡️
+            <span  id="tempMin5"></span>
+            <sup><small><a href="" id="celsius-link5a">C°</a>|
+                    <a href="" id="fahrenheit-link5a">F°</a> </small></sup>
+        </p><hr>
+        <p class="humidityN">
+        <sup><small>humidity:</small></sup><br>💧
+        <span id="humidN5"></span></p>
+        <hr>
+        <p class="windSpeedn">🍃<span id="windS5"></span><sup><small>
+                    <a href="" id="mprosec5">m/s</a> |
+                    <a href="" id="kmproh5">km/h</a></small></sup></p>
     </div>
 
 

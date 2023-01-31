@@ -188,7 +188,7 @@ font-weight:bold;
     border: 2px solid #000;
     border-radius:20px;
  
-padding:5px 5px 5px 5px;   
+padding:10px 10px 10px 10px;   
 margin:5px 5px 5px 5px;
 background: linear-gradient(189deg, rgba(0, 98, 105, 1) 0%, rgba(242, 242, 234, 1) 100%);
     color: rgba(50, 50, 130, 1);
@@ -279,7 +279,20 @@ color:black;
 }
 .windSpeedn{
     font-size:12px;
-    font-style:italic;}
+    font-style:italic;
+text-decoration:none;
+color:black;
+}
+
+.windSpeedn a{
+    color:black;
+    text-decoration:none;
+}
+
+.tempMinn a{
+    color: black;
+        text-decoration: none;
+}
  
 #mprosec{
     color: grey;
@@ -315,7 +328,7 @@ color:black;
 img{
 max-width:100%;   
 margin-bottom:40px; 
-
+padding:5px 5px 5px 5px;
 border-radius:20px;
 }
 
@@ -359,6 +372,9 @@ background:
         padding: 5px 5px 5px 5px;
 }
 
+.light .note{
+    color:darkblue;
+}
 
 #themebutton{
     display:block;

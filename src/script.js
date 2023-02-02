@@ -1,4 +1,4 @@
-/*Date*/
+
 
 let apiKey="bd3bb6534458ba51b48c49f5155745b6";
 let date = new Date() ;
@@ -186,7 +186,7 @@ function mprosectokmproh(event){
   event.preventDefault()
 
 
-  let windSpeedkm=Math.round(windSpeed*3.6);
+  let windSpeedkm=Math.round(windS*3.6);
   wiS.innerHTML=`${windSpeedkm}`;
   
 
@@ -195,7 +195,7 @@ function mprosectokmproh(event){
 function kmprohtomprosec(event){
   event.preventDefault()
 
-  wiS.innerHTML=`${windSpeed}`;
+  wiS.innerHTML=`${windS}`;
 
 }
 
@@ -223,8 +223,8 @@ countryOfCity.innerHTML=` ${tempInLoc.data.sys.country}`;
   description.innerHTML=`, current weather: ${tempInLoc.data.weather[0].description} `;
   
  
-  windSpeed=`${tempInLoc.data.wind.speed}`;
-  wiS.innerHTML=` ${windSpeed}`;
+  windS=`${tempInLoc.data.wind.speed}`;
+  wiS.innerHTML=` ${windS}`;
 
 
 
@@ -243,24 +243,24 @@ else
 
 }
 
-/*
-let windSpeedn=document.querySelector(`#windSpeed0`);
+
+
 
 function mprosecTokmproh (event){
   event.preventDefault();
- let speedInkmh=Math.round(windSpeed*3.6);
+ let speedInkmh=Math.round(windS*3.6);
  
- windSpeedn.innerHTML=`${speedInkmh}`;
+ windS.innerHTML=`${speedInkmh}`;
 
 }
 function kmprohTompros(event){
 event.preventDefault();
 
-windSpeed.innerHTML=`${windS}`;
+windS.innerHTML=`${windS}`;
 }
 
 mprosec.addEventListener("click", kmprohTompros);
-kmproh.addEventListener("click", mprosecTokmproh);*/
+kmproh.addEventListener("click", mprosecTokmproh);
 
 
 
@@ -443,6 +443,10 @@ cels5.addEventListener("click", fahtocels5);
 function showNextDay(weatherNext)
 {
 
+  windS=(`${weatherNext.data.list[0].wind.speed}`);
+wiS.innerHTML=`${windS} `;
+console.log(windS);
+
 celsiusTemperature1= Math.round(`${weatherNext.data.list[1].main.temp}`);
 tempP1.innerHTML= `${celsiusTemperature1}`;
 
@@ -537,7 +541,16 @@ humidN5a.innerHTML=` ${humidN5} %`;
 windS5=(`${weatherNext.data.list[5].wind.speed}`);
 windS5a.innerHTML=`${windS5}`;
 
+console.log(weatherNext);
 
+let s0=document.querySelector(`#symbol0`);
+let mainWeather0=`${weatherNext.data.list[0].weather[0].main}`;
+
+if (mainWeather0==="Clouds"){s0.innerHTML=`🌤️`} else{};
+if (mainWeather0==="Clear"){s0.innerHTML=`☀️`} else{};
+if (mainWeather0==="Snow"){s0.innerHTML=`🌨️`} else{};
+if (mainWeather0==="Rain"){s0.innerHTML=`🌧️`} else{};
+if (mainWeather0==="Storm"){s0.innerHTML=`⛈️`}else{};
 
 let s1=document.querySelector(`#symbol1`)
 let mainWeather1=`${weatherNext.data.list[1].weather[0].main}`;
@@ -623,11 +636,11 @@ let weD = document.querySelector(`#weatherdesc`);
 let weatDe=`${response.data.weather[0].description}`;
 weD.innerHTML=` ${weatDe}`;
 
-/*
-let winS=document.querySelector(`#windSpeed`);
-let windSp=`${response.data.wind.speed}`;
-winS.innerHTML=` ${windSp}`;
-*/
+
+
+windS=`${response.data.wind.speed}`;
+wiS.innerHTML=` ${windS}`;
+
 
 
 let noteDis=document.querySelector(`#noteText`);
@@ -658,16 +671,17 @@ function currentTemp(location){
 
   function handlePosition (position) {
   let latITUDE = position.coords.latitude;
-  console.log(latITUDE);
+
   let lonGITUDE = position.coords.longitude;
-  console.log(lonGITUDE);
+
+
 let weatherUrl =
   "https://api.openweathermap.org/data/2.5/weather";
   axios.get(`${weatherUrl}?lat=${latITUDE}&lon=${lonGITUDE}&appid=${apiKey}&units=metric`).then(showUser);
 
   let reverseUrl="https://api.openweathermap.org/geo/1.0/reverse";
   axios.get(`${reverseUrl}?lat=${latITUDE}&lon=${lonGITUDE}&limit=5&appid=${apiKey}`).then(showCity);    
-console.log(location);
+
 
 let weatherforCastURL=
  "https://api.openweathermap.org/data/2.5/forecast";

@@ -1,6 +1,7 @@
-
+/*API*/
 
 let apiKey="bd3bb6534458ba51b48c49f5155745b6";
+/*global variables*/
 let date = new Date() ;
 console.log(date);
 
@@ -68,7 +69,7 @@ let cels5= document.querySelector(`#celsius-link5a`);
 let fah5=document.querySelector(`#fahrenheit-link5a`);;
 let humidN5a=document.querySelector("#humidN5");
 let windS5a=document.querySelector("#windS5");
-
+/*displey of day of week*/
 let days=["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let day=days[date.getDay()];
 
@@ -149,9 +150,9 @@ if (day==`Sunday`) {
 
 
 dayOfWeek()
-/*Date */
 
 
+/*determine current location*/
 function currentLocation(event){
   event.preventDefault();
 let inputCity=document.querySelector("#label1");
@@ -226,6 +227,7 @@ countryOfCity.innerHTML=` ${tempInLoc.data.sys.country}`;
   windS=`${tempInLoc.data.wind.speed}`;
   wiS.innerHTML=` ${windS}`;
 
+  /*display notes depending on temperature*/
 
 
 let noteDis1=document.querySelector(`#noteText`);
@@ -243,7 +245,7 @@ else
 
 }
 
-
+/*Conversion: m/s - km /h */
 
 
 function mprosecTokmproh (event){
@@ -355,7 +357,7 @@ kmproh5.addEventListener("click", mprosecTokmproh5);
 
 function celstofah1(event){
   event.preventDefault();
- tempFeel1a=Math.round(tempFeel1*3.6);
+ tempFeel1a=Math.round((tempFeel1*1.8)+32);
  
  tempMin1a.innerHTML=`${tempFeel1a}`;
 
@@ -373,7 +375,7 @@ cels1.addEventListener("click", fahtocels1);
 
 function celstofah2(event){
   event.preventDefault();
- tempFeel2a=Math.round(tempFeel2*3.6);
+ tempFeel2a=Math.round((tempFeel2*1.8)+32);
  
  tempMin2a.innerHTML=`${tempFeel2a}`;
 
@@ -390,7 +392,7 @@ cels2.addEventListener("click", fahtocels2);
 
 function celstofah3(event){
   event.preventDefault();
- tempFeel3a=Math.round(tempFeel3*3.6);
+ tempFeel3a=Math.round((tempFeel3*1.8)+32);
  
  tempMin3a.innerHTML=`${tempFeel3a}`;
 
@@ -408,7 +410,7 @@ cels3.addEventListener("click", fahtocels3);
 
 function celstofah4(event){
   event.preventDefault();
- tempFeel4a=Math.round(tempFeel4*3.6);
+ tempFeel4a=Math.round((tempFeel4*1,8)+32);
  
  tempMin4a.innerHTML=`${tempFeel4a}`;
 
@@ -426,7 +428,7 @@ cels4.addEventListener("click", fahtocels4);
 
 function celstofah5(event){
   event.preventDefault();
- tempFeel5a=Math.round(tempFeel5*3.6);
+ tempFeel5a=Math.round((tempFeel5*1.8)+32);
  
  tempMin5a.innerHTML=`${tempFeel5a}`;
 
@@ -439,6 +441,8 @@ tempMin5a.innerHTML=`${tempFeel5}`;
 
 fah5.addEventListener("click", celstofah5);
 cels5.addEventListener("click", fahtocels5);
+
+/* Show temperature, description, temperatur and humidity of next 5 days*/
 
 function showNextDay(weatherNext)
 {
@@ -541,7 +545,7 @@ humidN5a.innerHTML=` ${humidN5} %`;
 windS5=(`${weatherNext.data.list[5].wind.speed}`);
 windS5a.innerHTML=`${windS5}`;
 
-console.log(weatherNext);
+/*display symbols*/
 
 let s0=document.querySelector(`#symbol0`);
 let mainWeather0=`${weatherNext.data.list[0].weather[0].main}`;
@@ -605,6 +609,8 @@ if (mainWeather5==="Storm"){s5.innerHTML=`⛈️`}else{};
 let buttonCity=document.querySelector("#searchInput");
 buttonCity.addEventListener("click",currentLocation);
 
+/*display alternative theme*/
+
 function makeitlight(event)
 {event.preventDefault();
 
@@ -617,6 +623,7 @@ if (body.classList.contains("light"))
 let button= document.querySelector(`#themebutton`);
 button.addEventListener("click", makeitlight);
 
+/* respond to user input and display  results */
 
 function showUser(response) {
   
@@ -692,7 +699,7 @@ let weatherforCastURL=
 let buttonCurrent=document.querySelector("#searchCurrentLocation");
 buttonCurrent.addEventListener("click",currentTemp);
 
-/*conversions of units*/
+/*conversions of units same day*/
 
 
 
